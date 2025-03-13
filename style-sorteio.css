@@ -1,0 +1,11 @@
+.main {
+    background: rgba(109, 148, 255, 0.637);
+}
+
+.main-lose {
+    background: rgba(255, 78, 78, 0.637);
+}
+
+.main-win {
+    background: rgba(133, 255, 109, 0.637);
+}

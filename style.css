@@ -2,3 +2,8 @@
     width: 800px;
 }
 
+body {
+    background: url(imagens/background-3.jpg) no-repeat;
+    background-size: 100%;
+}
+

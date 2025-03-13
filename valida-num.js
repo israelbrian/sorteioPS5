@@ -1,5 +1,4 @@
 let numeroRecebido 
-let numeroSorteado
 // let tempo = 5
 
 function escolherNumero() {

@@ -13,14 +13,13 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- JS -->
-     <script src="script.js"></script>
+    <link rel="stylesheet" href="style-sorteio.css">
      
 </head>
 <body class="bg-white">
     
     <section class="container">
-        <div class="bg-warning position-absolute top-50 start-50 translate-middle p-5 rounded-3 caixa">
+        <div class="main position-absolute top-50 start-50 translate-middle p-5 rounded-3 caixa">
             <h1 class="display-5 text-center text-light" id="titulo">
                 
             </h1>
@@ -32,35 +31,6 @@
         </div>
     </section>
 
-    <script>
-        let tempo = 10
-
-        window.onload = function() {
-            let params = new URLSearchParams(window.location.search)
-            let numeroEscolhido = params.get('numero')
-
-            if (numeroEscolhido) {
-                document.getElementById('titulo').innerText = `Ótima escolha! O Número escolhido foi: ${numeroEscolhido}`
-            }
-
-            let cronometro = setInterval(function() {
-                tempo -= 1
-
-                if (tempo == 0) {
-                    clearInterval(cronometro)
-                    // window.location.href = 'resultado.html'
-                    // alert('Sorteio realizado!')
-                    document.getElementById('titulo').innerText = 'Sorteio realizado!'
-                    document.getElementById('cronometro').innerText = `Você perdeu o resultado foi (x)`
-
-                } else {
-                    document.getElementById('cronometro').innerText = `O sorteio irá acontecer em ${tempo} segundos`
-                }
-            }, 1000)
-
-
-        }
-
-     </script>
+    <script src="logica-sorteio.js"></script>
 </body>
 </html>
