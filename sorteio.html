@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+    <!-- bootstrap 5.3.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JS -->
+     <script src="script.js"></script>
+     
+</head>
+<body class="bg-white">
+    
+    <section class="container">
+        <div class="bg-warning position-absolute top-50 start-50 translate-middle p-5 rounded-3 caixa">
+            <h1 class="display-5 text-center text-light" id="titulo">
+                
+            </h1>
+            <h2 class="lead fs-1 text-center text-light p-2">
+                <!-- O sorteio irá acontecer em breve! 🎉🎉 -->
+                <span id="cronometro"></span>
+            </h2>   
+
+        </div>
+    </section>
+
+    <script>
+        let tempo = 10
+
+        window.onload = function() {
+            let params = new URLSearchParams(window.location.search)
+            let numeroEscolhido = params.get('numero')
+
+            if (numeroEscolhido) {
+                document.getElementById('titulo').innerText = `Ótima escolha! O Número escolhido foi: ${numeroEscolhido}`
+            }
+
+            let cronometro = setInterval(function() {
+                tempo -= 1
+
+                if (tempo == 0) {
+                    clearInterval(cronometro)
+                    // window.location.href = 'resultado.html'
+                    // alert('Sorteio realizado!')
+                    document.getElementById('titulo').innerText = 'Sorteio realizado!'
+                    document.getElementById('cronometro').innerText = `Você perdeu o resultado foi (x)`
+
+                } else {
+                    document.getElementById('cronometro').innerText = `O sorteio irá acontecer em ${tempo} segundos`
+                }
+            }, 1000)
+
+
+        }
+
+     </script>
+</body>
+</html>
