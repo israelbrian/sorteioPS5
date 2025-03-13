@@ -1,10 +1,12 @@
-let tempo = 5
+let tempo = 2
 let numeroSorteado
 let numeroEscolhido
+let numeroEscolhidoConvertido
 
         window.onload = function() {
             let params = new URLSearchParams(window.location.search)
             let numeroEscolhido = params.get('numero')
+            numeroEscolhidoConvertido = Number(numeroEscolhido)
 
             if (numeroEscolhido) {
                 document.getElementById('titulo').innerText = `Ótima escolha! O Número escolhido foi: ${numeroEscolhido}`
@@ -27,17 +29,24 @@ let numeroEscolhido
 
         function sorteio() {
             // REALIZA O SORTEIO
-            numeroSorteado = Math.floor(Math.random() * 5)
+            numeroSorteado = Math.ceil(Math.random() * 3)
             
-            
+            let divResultado = document.getElementById('div-principal')
+            divResultado.classList.remove('main-win', 'main-lose'); // REMOVE AS CLASSES DE VITÓRIA E DERROTA
 
             // VALIDA SE O NÚMERO ESCOLHIDO É IGUAL AO SORTEADO
-            if (numeroEscolhido == numeroSorteado) {
-                document.getElementById('titulo').innerText = `Parabéns! Você acertou o número!`
+            if (numeroEscolhidoConvertido === numeroSorteado) {
+                document.getElementById('titulo').innerText = `Parabéns! Você acertou! 🎉🎉`
                 document.getElementById('cronometro').innerText = `O resultado foi ${numeroSorteado}`
+                divResultado.classList.add('main-win'); // ADICIONA APENAS A CLASSE DE VITÓRIA
+                let tentarDenovo = document.createElement('button')
+                tentarDenovo.innerText = 'Tentar novamente'
             } else {
-                document.getElementById('titulo').innerText = `Infelizmente você errou o número!`
+                document.getElementById('titulo').innerText = `Infelizmente você errou! 😭😭`
                 document.getElementById('cronometro').innerText = `O resultado foi ${numeroSorteado}`
+                divResultado.classList.add('main-lose'); // ADICIONA APENAS A CLASSE DE DERROTA
+                let tentarDenovo = document.createElement('button')
+                tentarDenovo.innerText = 'Tentar novamente'
             }
 
         }

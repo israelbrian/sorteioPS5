@@ -17,10 +17,4 @@ function escolherNumero() {
     }
 
     window.location.href = `sorteio.html?numero=${numeroRecebido}`
-
-
-
-    // document.getElementById('titulo').innerHTML = `Ótima escolha! O Número escolhido foi: ${numeroEscolhido}`
 }
-
-// sorteio = Math.floor(Math.random() * 50)
