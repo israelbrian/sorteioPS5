@@ -33,20 +33,20 @@ let numeroEscolhidoConvertido
             
             let divResultado = document.getElementById('div-principal')
             divResultado.classList.remove('main-win', 'main-lose'); // REMOVE AS CLASSES DE VITÓRIA E DERROTA
+            let botaoVoltar = document.getElementById('btn-voltar')
 
             // VALIDA SE O NÚMERO ESCOLHIDO É IGUAL AO SORTEADO
             if (numeroEscolhidoConvertido === numeroSorteado) {
                 document.getElementById('titulo').innerText = `Parabéns! Você acertou! 🎉🎉`
                 document.getElementById('cronometro').innerText = `O resultado foi ${numeroSorteado}`
                 divResultado.classList.add('main-win'); // ADICIONA APENAS A CLASSE DE VITÓRIA
-                let tentarDenovo = document.createElement('button')
-                tentarDenovo.innerText = 'Tentar novamente'
+                botaoVoltar.classList.remove('hidden') // REMOVE A CLASSE HIDDEN ASSIM MOSTRADNO O BOTAO NA TELA
+
             } else {
                 document.getElementById('titulo').innerText = `Infelizmente você errou! 😭😭`
                 document.getElementById('cronometro').innerText = `O resultado foi ${numeroSorteado}`
                 divResultado.classList.add('main-lose'); // ADICIONA APENAS A CLASSE DE DERROTA
-                let tentarDenovo = document.createElement('button')
-                tentarDenovo.innerText = 'Tentar novamente'
+                botaoVoltar.classList.remove('hidden') // REMOVE A CLASSE HIDDEN ASSIM MOSTRADNO O BOTAO NA TELA
             }
 
         }
