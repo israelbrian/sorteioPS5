@@ -17,8 +17,6 @@ let numeroEscolhidoConvertido
 
                 if (tempo == 0) {
                     clearInterval(cronometro)
-                    // window.location.href = 'resultado.html'
-                    // alert('Sorteio realizado!')
                     document.getElementById('titulo').innerText = 'Sorteio realizado!'
                     sorteio()
                 } else {
