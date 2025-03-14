@@ -1,3 +1,6 @@
+.caixa {
+    height: 280px;
+}
 .main {
     /* background: rgba(109, 148, 255, 0.637); */
     background: rgba(95, 164, 255, 0.637);
@@ -13,4 +16,11 @@
 
 .hidden {
     display: none;
+}
+
+button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
