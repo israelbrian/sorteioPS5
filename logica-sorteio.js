@@ -3,7 +3,7 @@ let numeroSorteado
 let numeroEscolhido
 let numeroEscolhidoConvertido
 
-        window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
             let params = new URLSearchParams(window.location.search)
             let numeroEscolhido = params.get('numero')
             numeroEscolhidoConvertido = Number(numeroEscolhido)
@@ -23,7 +23,7 @@ let numeroEscolhidoConvertido
                     document.getElementById('cronometro').innerText = `O sorteio irá acontecer em ${tempo} segundos`
                 }
             }, 1000)
-        }
+        })
 
         function sorteio() {
             // REALIZA O SORTEIO
