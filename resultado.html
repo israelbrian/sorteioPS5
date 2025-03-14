@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteio</title>
+    <!-- bootstrap 5.3.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style-principal.css" />
+    <link rel="stylesheet" href="style-sorteio.css" />
+
+    <!-- Fonte awesome -->
+    <script src="https://kit.fontawesome.com/71ad9733af.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body class="bg-white">
+    <section class="container">
+      <div class="main position-absolute top-50 start-50 translate-middle p-5 rounded-3 caixa"
+        id="div-principal"
+      >
+        <h1 class="display-5 text-center text-light" id="titulo-resul">
+          <!-- O sorteio irá acontecer em breve! 🎉🎉 -->
+        </h1>
+
+        <h2 class="lead fs-1 text-center text-light p-2" id="subtitulo-resul">
+          <!-- Infelizmente você errou! 😭😭 || Parabéns! Você acertou! 🎉🎉 -->
+          <span id="cronometro"></span>
+        </h2>
+
+        <button type="button" class="btn btn-light btn-lg rounded-pill" onclick="window.location.href='index.html'">
+          <!-- <i class="fa-solid fa-circle-left fs-1 text-light"></i> -->
+          <i class="fa-solid fa-repeat fs-1 text-dark"></i>
+        </button>
+      </div>
+    </section>
+
+    <script src="resultado.js"></script>
+
+  </body>
+</html>

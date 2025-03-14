@@ -10,3 +10,7 @@
 .main-win {
     background: rgba(133, 255, 109, 0.637);
 }
+
+.hidden {
+    display: none;
+}

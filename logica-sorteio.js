@@ -17,15 +17,15 @@ let numeroEscolhidoConvertido
 
                 if (tempo == 0) {
                     clearInterval(cronometro)
-                    // window.location.href = 'resultado.html'
-                    // alert('Sorteio realizado!')
-                    document.getElementById('titulo').innerText = 'Sorteio realizado!'
+                    window.location.href = `resultado.html?numero=${numeroEscolhidoConvertido}&sorteado=${numeroSorteado}`;
                     sorteio()
                 } else {
-                    document.getElementById('cronometro').innerText = `O sorteio irá acontecer em ${tempo} segundos`
+                    document.getElementById('subtitulo').innerText = `O sorteio irá acontecer em ${tempo} segundos`
                 }
             }, 1000)
         }
+
+        teste()
 
         function sorteio() {
             // REALIZA O SORTEIO
@@ -36,17 +36,13 @@ let numeroEscolhidoConvertido
 
             // VALIDA SE O NÚMERO ESCOLHIDO É IGUAL AO SORTEADO
             if (numeroEscolhidoConvertido === numeroSorteado) {
-                document.getElementById('titulo').innerText = `Parabéns! Você acertou! 🎉🎉`
-                document.getElementById('cronometro').innerText = `O resultado foi ${numeroSorteado}`
+                document.getElementById('titulo-resul').innerText = `Parabéns! Você acertou! 🎉🎉`
+                document.getElementById('subtitulo-resul').innerText = `O resultado foi ${numeroSorteado}`
                 divResultado.classList.add('main-win'); // ADICIONA APENAS A CLASSE DE VITÓRIA
-                let tentarDenovo = document.createElement('button')
-                tentarDenovo.innerText = 'Tentar novamente'
             } else {
-                document.getElementById('titulo').innerText = `Infelizmente você errou! 😭😭`
-                document.getElementById('cronometro').innerText = `O resultado foi ${numeroSorteado}`
+                document.getElementById('titulo-resul').innerText = `Infelizmente você errou! 😭😭`
+                document.getElementById('subtitulo-resul').innerText = `O resultado foi ${numeroSorteado}`
                 divResultado.classList.add('main-lose'); // ADICIONA APENAS A CLASSE DE DERROTA
-                let tentarDenovo = document.createElement('button')
-                tentarDenovo.innerText = 'Tentar novamente'
             }
 
         }
