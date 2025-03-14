@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
             numeroSorteado = Math.ceil(Math.random() * 50)
             
             let divResultado = document.getElementById('div-principal')
-            divResultado.classList.remove('main-win', 'main-lose'); // REMOVE AS CLASSES DE VITÓRIA E DERROTA
             let botaoVoltar = document.getElementById('btn-voltar')
 
             // VALIDA SE O NÚMERO ESCOLHIDO É IGUAL AO SORTEADO
