@@ -1,4 +1,4 @@
-let tempo = 2
+let tempo = 15
 let numeroSorteado
 let numeroEscolhido
 let numeroEscolhidoConvertido
@@ -27,7 +27,7 @@ let numeroEscolhidoConvertido
 
         function sorteio() {
             // REALIZA O SORTEIO
-            numeroSorteado = Math.ceil(Math.random() * 3)
+            numeroSorteado = Math.ceil(Math.random() * 50)
             
             let divResultado = document.getElementById('div-principal')
             divResultado.classList.remove('main-win', 'main-lose'); // REMOVE AS CLASSES DE VITÓRIA E DERROTA
