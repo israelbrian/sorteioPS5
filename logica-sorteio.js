@@ -4,12 +4,13 @@ let numeroEscolhido
 let numeroEscolhidoConvertido
 
 document.addEventListener("DOMContentLoaded", function() {
-            let params = new URLSearchParams(window.location.search)
-            let numeroEscolhido = params.get('numero')
-            numeroEscolhidoConvertido = Number(numeroEscolhido)
+            let params = new URLSearchParams(window.location.search) // Extrai parâmetros passados na URL
+            let numeroEscolhido = params.get('numero') // Obtém o número escolhido pelo usuário
+            numeroEscolhidoConvertido = Number(numeroEscolhido) // Converte a string do parâmetro para um número, garantindo comparação correta
 
             if (numeroEscolhido) {
                 document.getElementById('titulo').innerText = `Ótima escolha! O Número escolhido foi: ${numeroEscolhido}`
+                // Exibe na tela o número escolhido pelo usuário antes do sorteio iniciar
             }
 
             let cronometro = setInterval(function() {
@@ -27,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function sorteio() {
             // REALIZA O SORTEIO
+            // Retorna um número entre 1 e 50, arredondando para cima 
+            // (tirando a possibilidade de cair zero)
             numeroSorteado = Math.ceil(Math.random() * 50)
             
             let divResultado = document.getElementById('div-principal')
